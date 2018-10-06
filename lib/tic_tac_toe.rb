@@ -135,3 +135,30 @@ def winner(board)
   end
 
 end
+
+
+def turn(board)
+  puts "Please enter 1-9:"
+  input = gets.strip
+  index = input_to_index(input)
+  if valid_move?(board, index)
+    move(board, index)
+    display_board(board)
+  else
+    turn(board)
+  end
+end
+
+# Define your play method below
+
+
+def play(board)
+
+i=0
+
+  while (i < 9)
+    turn(board)
+    i += 1
+  end
+
+end
